@@ -4,5 +4,5 @@
 if [ "`which rpm`" ]; then
   rpm -qa --qf "%{NAME} " > packages.txt
 else 
-  echo 'not installed'
+  dpkg --get-selections > packages.txt
 fi

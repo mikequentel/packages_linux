@@ -4,5 +4,6 @@
 if [ "`which rpm`" ]; then
   dnf -y install `cat packages.txt`
 else 
-  echo 'not installed'
+  dpkg --set-selections < packages.txt
+  apt-get dselect-upgrade
 fi
